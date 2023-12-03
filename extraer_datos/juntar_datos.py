@@ -1,6 +1,6 @@
-with open("LocomotoraTraducida.csv","r") as f:
+with open("numero_de_McDonalds.csv","r") as f:
   lineas=f.readlines()
-  with open("LocomotoraFinal.csv","w") as a:
+  with open("datos_finales_sin_traducir.csv","w") as a:
     a.write("country,mcnumber,Population,PersonPerMc,BigMacAdjusted,Obesity\n")
     a.close()
   lineas=sorted(lineas[1:])
@@ -11,7 +11,7 @@ with open("LocomotoraTraducida.csv","r") as f:
     ppmc="NA"
     obesidad="NA"
     bigmac="NA"
-    with open("obesofiltradoordenado.csv","r") as o:
+    with open("poblacion_y_obesidad_limpio.csv","r") as o:
       lineaso=o.readlines()[1:]
       encontrado=False
       for lineao in lineaso:
@@ -25,7 +25,7 @@ with open("LocomotoraTraducida.csv","r") as f:
       if not encontrado:
         print("INDICE DE OBESIDAD NO ENCONTRADO PARA", lineasep[0])
       o.close()
-    with open("parapapapa2023.csv","r") as p:
+    with open("big_mac_index_2023_limpio.csv","r") as p:
       lineasp=p.readlines()[1:]
       encontrado=False
       for lineap in lineasp:
@@ -37,7 +37,7 @@ with open("LocomotoraTraducida.csv","r") as f:
       if not encontrado:
         print("BIG MAC NO ENCONTRADO PARA", lineasep[0])
       p.close()
-    with open("LocomotoraFinal.csv","a") as a:
+    with open("datos_finales_sin_traducir.csv","a") as a:
       a.write(lineasep[0]+","+lineasep[1]+","+popu+","+ppmc+","+bigmac+","+obesidad+"\n")
       a.close()
   f.close()

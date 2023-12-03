@@ -1,4 +1,4 @@
-datos <- read.csv("datos.csv", header = TRUE)
+datos <- read.csv("datos_finales.csv", header = TRUE)
 headers <- colnames(datos)
 titulos <- c("Personas por McDonalds", "Precio del Big Mac ajustado a la RPC", "Porcentaje de obesidad (IMC>30)")
 print("#####ESTADISTICAS UNIDIMENSIONALES#####")
